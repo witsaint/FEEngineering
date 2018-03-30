@@ -46,7 +46,7 @@
  */
   "deploy" : {
     "pro": {
-      "user": "root",
+      "user": "witsaint",
       "host": "106.12.14.227",
       "ref": "origin/master",
       "repo": "https://github.com/witsaint/FEEngineering.git",
@@ -57,7 +57,7 @@
       }
     },
     "dev" : {
-      "user" : "root",
+      "user" : "witsaint",
       "host" : "192.168.21.30",
       "ref"  : "origin/master",
       "repo" : "https://github.com/witsaint/FEEngineering.git",
