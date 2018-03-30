@@ -19,28 +19,28 @@ module.exports = {
    * Deployment section
    * http://pm2.keymetrics.io/docs/usage/deployment/
    */
-  // deploy : {
-  //   pro: {
-  //     user: 'root',
-  //     host: ['121.40.230.178', '120.55.113.215'],
-  //     ref: 'origin/master',
-  //     repo: `git@git.jufandev.com:fe/${App.name}.git`,
-  //     path: `/var/www/${App.name}`,
-  //     'pre-deploy': 'git pull',
-  //     env: {
-  //       NODE_ENV: 'production'
-  //     }
-  //   },
-  //   dev : {
-  //     user : "root",
-  //     host : "192.168.21.30",
-  //     ref  : "origin/master",
-  //     repo : "git@git.jufandev.com:fe/Collection.git",
-  //     path : "/var/www/Collection",
-  //     "post-deploy" : "source /var/www/start.sh",
-  //     env  : {
-  //       NODE_ENV: "dev"
-  //     }
-  //   }
-  // }
+  deploy : {
+    pro: {
+      user: 'root',
+      host: '106.12.14.227',
+      ref: 'origin/master',
+      repo: `https://github.com/witsaint/FEEngineering.git`,
+      path: "/www/web/witsaint",
+      "post-deploy" : "npm install && pm2 startOrRestart processes.json --env dev",
+      env  : {
+        NODE_ENV: "dev"
+      }
+    },
+    dev : {
+      user : "root",
+      host : "192.168.21.30",
+      ref  : "origin/master",
+      repo : "https://github.com/witsaint/FEEngineering.git",
+      path : "/www/web/witsaint",
+      "post-deploy" : "npm install && pm2 startOrRestart processes.json --env dev",
+      env  : {
+        NODE_ENV: "dev"
+      }
+    }
+  }
 }
