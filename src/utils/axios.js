@@ -2,6 +2,8 @@ import axios from 'axios'
 // import qs from 'qs'
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+// axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8'
+// axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
 // axios.defaults.transformRequest = [function (data) { return qs.stringify(data) }]
 
 axios.interceptors.request.use(

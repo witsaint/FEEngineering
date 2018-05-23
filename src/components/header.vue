@@ -1,7 +1,7 @@
 <template>
   <header>
-    <div class="system-title">
-      <strong>聚泛统一催收系统</strong>
+    <div class="system-title" style="text-align: center">
+      <strong>witsaint</strong>
     </div>
     <span class="head-content">
       <i class="iconfont icon-caidan menu-icon" :class="{'menu-icon-rotate': open}" @click="triggleMenu"></i>
@@ -11,11 +11,6 @@
 </template>
 
 <script>
-  import Vue from 'vue'
-  import {Button} from 'element-ui'
-
-  Vue.use(Button)
-
   export default {
     data () {
       return {

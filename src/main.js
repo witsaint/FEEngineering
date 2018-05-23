@@ -1,32 +1,29 @@
 import Vue from 'vue'
-import moment from 'moment'
-import accounting from 'accounting'
-import router from './utils/router'
+// import router from './utils/router'
+import router from './router'
 import store from './store'
 import App from './App'
+import ui from 'fdk-ui'
+import 'fdk-ui/lib/style/index.css'
 import ElementUI from 'element-ui'
-import { Tabs, TabPane } from 'iview'
-Vue.component('Tabs', Tabs)
-Vue.component('TabPane', TabPane)
-// import 'element-ui/lib/theme-default/index.css'
 import 'element-ui/lib/theme-chalk/index.css'
+import * as filters from './Vue/filters'
+import * as directive from './Vue/directive'
 /* eslint-disable */
 
-// import iView from 'iview'
-import 'iview/dist/styles/iview.css'
-
-moment.locale('zh-cn')
-
-Vue.filter('formatDate', value => moment(+value).format('YYYY-MM-DD HH:mm:ss'))
-
-Vue.filter('relativeTime', value => moment(+value).startOf().fromNow(true))
-
-Vue.filter('formatMoney', value => accounting.formatMoney(value, '¥'))
+/* 自定义指令 */
+Object.keys(directive).forEach(funcName => {
+  Vue.filter(funcName, directive[funcName])
+})
+/* filters 过滤器 */
+Object.keys(filters).forEach(funcName => {
+  Vue.filter(funcName, filters[funcName])
+})
 
 Vue.config.productionTip = false
 
+Vue.use(ui)
 Vue.use(ElementUI)
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

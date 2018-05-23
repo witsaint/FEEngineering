@@ -25,6 +25,8 @@
 </template>
 
 <script>
+  import dataSvg from '@/assets/svgdataA'
+  import demoApi from '@/api/demo'
   export default {
     name: 'home',
     data () {
@@ -34,7 +36,17 @@
         imgData: ''
       }
     },
-    methods: {}
+    methods: {},
+    mounted () {
+      // let data = 'test=12&demo=12&demo=35'
+      demoApi.testArray({
+        test: 12,
+        demo: [12, 35]
+      }).then(res => {
+        console.info(res)
+      })
+      console.info(dataSvg)
+    }
   }
 </script>
 

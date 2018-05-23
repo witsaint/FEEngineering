@@ -1,9 +1,3 @@
-import { TransferDomDirective as TransferDom } from 'vux'
-/* s */
-export function transferDom () {
-  // 定义指令
-  TransferDom
-}
 export function textcolor (el, binding, vnode) {
   let status = binding.value + ''
   switch (status) {
